@@ -190,6 +190,7 @@
   <div *ngIf="selectedMember?.name && !loading" style="text-align: center">
     <h2>Congrats!</h2>
     <p>🎉 {{ selectedMember.name }} {{ selectedMember.lastname }} 🎉</p>
+    <p>🎉 {{ selectedMember.role }} 🎉</p>
   </div>
 
   <router-outlet></router-outlet>

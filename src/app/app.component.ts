@@ -51,8 +51,8 @@ export class AppComponent {
     {
       id: 6,
       role: 'Web UI Developer, Sr.',
-      name: 'Alejandro',
-      lastname: 'Mengana',
+      name: 'David',
+      lastname: 'Aili',
       lead: 1,
       enable: false,
     },
@@ -105,7 +105,7 @@ export class AppComponent {
       enable: false,
     },
   ];
-  selectedMember = { name: '', lastname: '' };
+  selectedMember = { name: '', lastname: '', role: '' };
   loading = false;
 
   selectAll() {
@@ -113,14 +113,14 @@ export class AppComponent {
       item.enable = true;
       return item;
     });
-    this.selectedMember = { name: '', lastname: '' };
+    this.selectedMember = { name: '', lastname: '', role: '' };
   }
   clearAll() {
     this.team.map((item) => {
       item.enable = false;
       return item;
     });
-    this.selectedMember = { name: '', lastname: '' };
+    this.selectedMember = { name: '', lastname: '', role: '' };
   }
   chooseRandom() {
     const enableMembers = this.team.filter((item) => item.enable);
