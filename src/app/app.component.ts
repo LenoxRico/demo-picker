@@ -48,14 +48,14 @@ export class AppComponent {
       lead: 1,
       enable: false,
     },
-    {
-      id: 6,
-      role: 'Web UI Developer, Sr.',
-      name: 'David',
-      lastname: 'Aili',
-      lead: 1,
-      enable: false,
-    },
+    // {
+    //   id: 6,
+    //   role: 'Web UI Developer, Sr.',
+    //   name: 'David',
+    //   lastname: 'Aili',
+    //   lead: 1,
+    //   enable: false,
+    // },
     {
       id: 7,
       role: 'QA',
