@@ -48,14 +48,14 @@ export class AppComponent {
       lead: 1,
       enable: false,
     },
-    // {
-    //   id: 6,
-    //   role: 'Web UI Developer, Sr.',
-    //   name: 'David',
-    //   lastname: 'Aili',
-    //   lead: 1,
-    //   enable: false,
-    // },
+    {
+      id: 6,
+      role: 'FullStack Developer',
+      name: 'Roman',
+      lastname: 'Yaker',
+      lead: 1,
+      enable: false,
+    },
     {
       id: 7,
       role: 'QA',
@@ -104,7 +104,7 @@ export class AppComponent {
       lead: 4,
       enable: false,
     },
-  ];
+  ].sort((a, b) => a.name.localeCompare(b.name));
   selectedMember = { name: '', lastname: '', role: '' };
   loading = false;
 
