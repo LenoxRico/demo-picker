@@ -104,6 +104,14 @@ export class AppComponent {
       lead: 4,
       enable: false,
     },
+    {
+      id: 13,
+      role: 'Web UI Developer, SSr. Advance',
+      name: 'Joaquin',
+      lastname: 'Zamora',
+      lead: 1,
+      enable: false,
+    },
   ].sort((a, b) => a.name.localeCompare(b.name));
   selectedMember = { name: '', lastname: '', role: '' };
   loading = false;
