@@ -113,22 +113,40 @@ export class AppComponent {
       enable: false,
     },
   ].sort((a, b) => a.name.localeCompare(b.name));
-  selectedMember = { name: '', lastname: '', role: '' };
+  selectedMember = { id: 0, name: '', lastname: '', role: '' };
   loading = false;
+  formation: any = [];
 
   selectAll() {
     this.team.map((item) => {
       item.enable = true;
       return item;
     });
-    this.selectedMember = { name: '', lastname: '', role: '' };
+    this.resetParams();
   }
   clearAll() {
     this.team.map((item) => {
       item.enable = false;
       return item;
     });
-    this.selectedMember = { name: '', lastname: '', role: '' };
+    this.resetParams();
+  }
+  resetParams() {
+    this.formation = [];
+    this.selectedMember = { id: 0, name: '', lastname: '', role: '' };
+  }
+  shuffle(array: any) {
+    let currentIndex = array.length;
+    let randomIndex;
+    while (currentIndex > 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+    return array;
   }
   chooseRandom() {
     const enableMembers = this.team.filter((item) => item.enable);
@@ -137,6 +155,10 @@ export class AppComponent {
       const random = Math.floor(Math.random() * enableMembers.length);
       setTimeout(() => {
         this.selectedMember = enableMembers[random];
+        this.formation = this.shuffle(
+          enableMembers.filter((item) => item.id !== this.selectedMember.id)
+        );
+
         this.loading = false;
       }, 1500);
     }

@@ -187,10 +187,20 @@
     <img src="./../assets/loading.gif" alt="" width="300" />
   </div>
 
-  <div *ngIf="selectedMember?.name && !loading" style="text-align: center">
-    <h2>Congrats!</h2>
-    <p>🎉 {{ selectedMember.name }} {{ selectedMember.lastname }} 🎉</p>
-    <p>{{ selectedMember.role }}</p>
+  <div class="result-container" *ngIf="selectedMember?.name && !loading">
+    <div class="winner">
+      <h2>Congrats!</h2>
+      <p>🎉 {{ selectedMember.name }} {{ selectedMember.lastname }} 🎉</p>
+      <p>{{ selectedMember.role }}</p>
+    </div>
+    <div class="formation">
+      <h2>Formation:</h2>
+      <ol>
+        <li *ngFor="let item of formation">
+          {{ item.name }} {{ item.lastname }}
+        </li>
+      </ol>
+    </div>
   </div>
 
   <router-outlet></router-outlet>
