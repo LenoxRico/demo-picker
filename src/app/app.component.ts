@@ -43,8 +43,8 @@ export class AppComponent {
     {
       id: 5,
       role: 'Bussiness Analyst',
-      name: 'Daniela',
-      lastname: 'Herreño',
+      name: 'Milagros',
+      lastname: 'Infante',
       lead: 1,
       enable: false,
     },
