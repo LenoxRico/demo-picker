@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Yoshi Team';
+  frontTeam = 'FrontEnd';
+  backTeam = 'BackEnd';
+  uxTeam = 'Ux/Ui';
+  qaTeam = 'QA';
   team = [
     {
       id: 1,
@@ -14,6 +18,7 @@ export class AppComponent {
       name: 'Lenox',
       lastname: 'Almonacid',
       lead: 1,
+      title: this.frontTeam,
       enable: false,
     },
     {
@@ -22,6 +27,7 @@ export class AppComponent {
       name: 'Andrés',
       lastname: 'Muñoz',
       lead: 1,
+      title: this.frontTeam,
       enable: false,
     },
     {
@@ -30,6 +36,7 @@ export class AppComponent {
       name: 'Cesar',
       lastname: 'Landeros',
       lead: 4,
+      title: this.qaTeam,
       enable: false,
     },
     {
@@ -38,6 +45,7 @@ export class AppComponent {
       name: 'José',
       lastname: 'León',
       lead: 4,
+      title: this.backTeam,
       enable: false,
     },
     {
@@ -46,6 +54,7 @@ export class AppComponent {
       name: 'Milagros',
       lastname: 'Infante',
       lead: 1,
+      title: this.frontTeam,
       enable: false,
     },
     {
@@ -54,6 +63,7 @@ export class AppComponent {
       name: 'Roman',
       lastname: 'Yaker',
       lead: 1,
+      title: this.frontTeam,
       enable: false,
     },
     {
@@ -62,6 +72,7 @@ export class AppComponent {
       name: 'Juan',
       lastname: 'Arriaga',
       lead: 4,
+      title: this.qaTeam,
       enable: false,
     },
     {
@@ -70,6 +81,7 @@ export class AppComponent {
       name: 'Juan',
       lastname: 'Ascanio',
       lead: 4,
+      title: this.backTeam,
       enable: false,
     },
     {
@@ -78,6 +90,7 @@ export class AppComponent {
       name: 'Julian',
       lastname: 'Martínez',
       lead: 1,
+      title: this.uxTeam,
       enable: false,
     },
     {
@@ -86,6 +99,7 @@ export class AppComponent {
       name: 'Raúl',
       lastname: 'Campos',
       lead: 1,
+      title: this.frontTeam,
       enable: false,
     },
     {
@@ -94,6 +108,7 @@ export class AppComponent {
       name: 'Mario',
       lastname: 'Álvarez',
       lead: 4,
+      title: this.backTeam,
       enable: false,
     },
     {
@@ -102,6 +117,7 @@ export class AppComponent {
       name: 'Ana',
       lastname: 'Álvarez',
       lead: 4,
+      title: this.backTeam,
       enable: false,
     },
     {
@@ -110,6 +126,7 @@ export class AppComponent {
       name: 'Joaquin',
       lastname: 'Zamora',
       lead: 1,
+      title: this.frontTeam,
       enable: false,
     },
   ].sort((a, b) => a.name.localeCompare(b.name));
@@ -155,9 +172,32 @@ export class AppComponent {
       const random = Math.floor(Math.random() * enableMembers.length);
       setTimeout(() => {
         this.selectedMember = enableMembers[random];
-        this.formation = this.shuffle(
-          enableMembers.filter((item) => item.id !== this.selectedMember.id)
+        const shuffleFrontTeam = this.shuffle(
+          enableMembers.filter(
+            (item) =>
+              item.id !== this.selectedMember.id &&
+              item.title === this.frontTeam
+          )
         );
+        const shuffleBackTeam = this.shuffle(
+          enableMembers.filter(
+            (item) =>
+              item.id !== this.selectedMember.id && item.title === this.backTeam
+          )
+        );
+        const shuffleUxTeam = this.shuffle(
+          enableMembers.filter(
+            (item) =>
+              item.id !== this.selectedMember.id &&
+              (item.title === this.uxTeam || item.title === this.qaTeam)
+          )
+        );
+        this.formation = this.shuffle([
+          shuffleFrontTeam,
+          shuffleBackTeam,
+          shuffleUxTeam,
+        ]).flat();
+        console.log(this.formation);
 
         this.loading = false;
       }, 1500);
