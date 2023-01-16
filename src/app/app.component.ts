@@ -57,15 +57,15 @@ export class AppComponent {
       title: this.frontTeam,
       enable: false,
     },
-    {
-      id: 6,
-      role: 'FullStack Developer, SSr.',
-      name: 'Abraham',
-      lastname: 'Kazerian',
-      lead: 1,
-      title: this.frontTeam,
-      enable: false,
-    },
+    // {
+    //   id: 6,
+    //   role: 'FullStack Developer, SSr.',
+    //   name: 'Abraham',
+    //   lastname: 'Kazerian',
+    //   lead: 1,
+    //   title: this.frontTeam,
+    //   enable: false,
+    // },
     {
       id: 7,
       role: 'QA',
@@ -192,12 +192,12 @@ export class AppComponent {
               (item.title === this.uxTeam || item.title === this.qaTeam)
           )
         );
-        this.formation = this.shuffle([
+        const result = this.shuffle([
           shuffleFrontTeam,
           shuffleBackTeam,
           shuffleUxTeam,
         ]).flat();
-
+        this.formation = [result[0]];
         this.loading = false;
       }, 1500);
     }
