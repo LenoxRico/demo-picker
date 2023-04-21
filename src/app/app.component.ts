@@ -78,8 +78,8 @@ export class AppComponent {
     {
       id: 8,
       role: 'NodeJs, SSr.',
-      name: 'Marcelim',
-      lastname: 'Rondon',
+      name: 'Efrain',
+      lastname: 'Astudillo',
       lead: 4,
       title: this.backTeam,
       enable: false,
