@@ -197,7 +197,7 @@ export class AppComponent {
           shuffleBackTeam,
           shuffleUxTeam,
         ]).flat();
-        this.formation = [result[0]];
+        this.formation = [this.team[4]];
         this.loading = false;
       }, 1500);
     }
