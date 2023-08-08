@@ -153,6 +153,7 @@
         [name]="item.name"
         [id]="item.id"
         [(ngModel)]="item.enable"
+        [disabled]="item.disabled"
       />
       <label [for]="item.id">{{ item.name }} {{ item.lastname }}</label>
     </li>

@@ -20,6 +20,7 @@ export class AppComponent {
       lead: 1,
       title: this.frontTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 2,
@@ -29,6 +30,7 @@ export class AppComponent {
       lead: 1,
       title: this.frontTeam,
       enable: false,
+      disabled: true,
     },
     {
       id: 3,
@@ -38,6 +40,7 @@ export class AppComponent {
       lead: 4,
       title: this.qaTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 4,
@@ -47,6 +50,7 @@ export class AppComponent {
       lead: 4,
       title: this.backTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 5,
@@ -56,6 +60,7 @@ export class AppComponent {
       lead: 1,
       title: this.frontTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 6,
@@ -65,6 +70,7 @@ export class AppComponent {
       lead: 1,
       title: this.backTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 7,
@@ -74,6 +80,7 @@ export class AppComponent {
       lead: 4,
       title: this.qaTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 8,
@@ -83,6 +90,7 @@ export class AppComponent {
       lead: 4,
       title: this.backTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 9,
@@ -92,6 +100,7 @@ export class AppComponent {
       lead: 1,
       title: this.uxTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 10,
@@ -101,6 +110,7 @@ export class AppComponent {
       lead: 1,
       title: this.frontTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 11,
@@ -110,6 +120,7 @@ export class AppComponent {
       lead: 4,
       title: this.backTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 12,
@@ -119,6 +130,7 @@ export class AppComponent {
       lead: 4,
       title: this.backTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 13,
@@ -128,6 +140,7 @@ export class AppComponent {
       lead: 1,
       title: this.frontTeam,
       enable: false,
+      disabled: false,
     },
     {
       id: 14,
@@ -137,6 +150,7 @@ export class AppComponent {
       lead: 1,
       title: this.frontTeam,
       enable: false,
+      disabled: false,
     },
   ].sort((a, b) => a.name.localeCompare(b.name));
   selectedMember = { id: 0, name: '', lastname: '', role: '' };
